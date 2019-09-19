@@ -56,6 +56,22 @@ h6,
   color: #cdddeb;
 }
 
+.user {
+  display: inline-block;
+  float: right;
+  width: 500px;
+  height: auto;
+  margin: auto;
+  color: blue !important;
+  background-color: #D2F187;
+}
+
+.blog-nav-items {
+  font-size: 20px;
+  line-height: 14px;
+  float: right;
+}
+
 .blog-nav-item:hover,
 .blog-nav-item:focus {
   color: #fff;

@@ -17,6 +17,9 @@ class Post extends Model
         ]);*/
         $this->comments()->create(compact('body'));
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
 //comment on the tinker
 /*$posts = App\Post::find(6);
