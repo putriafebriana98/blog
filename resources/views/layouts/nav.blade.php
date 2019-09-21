@@ -8,6 +8,9 @@
             @if(Auth::check())
                 <a class="user">Hi, {{Auth::user()->name}}</a>
                 <a class="user" style="background-color: white;margin-left: 0px" href="/logout">Logout</a>
+            @else
+                <a class="user" style="background-color: white;margin-left: 0px" href="/login">login</a>
+                <a class="user" style="background-color: white;margin-left: 0px" href="/register">register</a>
             @endif
         </nav>
 

@@ -7,7 +7,9 @@
         <h4>Archives</h4>
         <ol class="list-unstyled">
             @foreach($archives as $archive)
-                <li><a href="#"> {{ date("F", mktime(0, 0, 0, $archive->month, 1)) }}</a></li>
+                <li><a href="/?month={{$archive->month}}&year={{$archive->year}}">
+                        {{ date("F", mktime(0, 0, 0, $archive->month, 1)).' '.$archive->year }}
+                    </a></li>
 
             @endforeach
         </ol>

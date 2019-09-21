@@ -11,6 +11,15 @@
 |
 */
 
+
+/*$stripe = resolve('App\Billing\Stripe');
+$stripe1 = resolve('App\Billing\Stripe');
+$stripe2 = resolve('App\Billing\Stripe');
+dd($stripe,$stripe1,$stripe2);*/
+
+
+
+
 Route::get('/', 'PostController@index')->name('home');
 Route::get('/posts/create','PostController@create');
 Route::post('/posts','PostController@store');
@@ -19,6 +28,6 @@ Route::post('/posts/{post}/comments','CommentsController@store');
 
 Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
-Route::get('/login','SessionsController@create');
+Route::get('/login','SessionsController@create')->name('login');
 Route::post('/login','SessionsController@store');
 Route::get('/logout','SessionsController@destroy');

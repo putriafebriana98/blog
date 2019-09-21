@@ -13,6 +13,7 @@
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Sign in</button>
+            <a type="button" class="btn btn-primary" href="{{url('/register')}}">register</a>
         </div>
         @include('layouts.errors')
     </form>

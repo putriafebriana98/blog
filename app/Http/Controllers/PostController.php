@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use DB;
+use App\Repositories\Posts;
 use App\Post;
+
 
 class PostController extends Controller
 {
@@ -12,10 +14,11 @@ class PostController extends Controller
     }
 
     //
-    function index(){
-        $posts=Post::orderBy('created_at','desc')->get();
-        $archives = \DB::table('posts')->select(DB::raw('year(created_at) as year,month(created_at) as month,count(*) as published'))->groupBy('year','month')->get()->toArray();
-        return view("posts.index",compact('posts','archives'));
+    function index(Posts $postss){
+        $posts=$postss->all();
+      //  $posts=(new \App\Repositories\Posts)->all();
+       // $posts=Post::latest()->filter(request(['month','year']))->get();
+        return view("posts.index",compact('posts'));
     }
     function create(){
         return view("posts.create");
@@ -46,6 +49,7 @@ class PostController extends Controller
         return redirect('/');
     }
     public function show(Post $post){
+
         return view("posts.show",compact('post'));
     }
 }
