@@ -26,6 +26,7 @@ Route::post('/posts','PostController@store');
 Route::get('/posts/{post}','PostController@show')->name('posts');
 Route::post('/posts/{post}/comments','CommentsController@store');
 
+Route::get('/posts/tags/{tag}', 'TagsController@index');
 Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
 Route::get('/login','SessionsController@create')->name('login');

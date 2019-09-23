@@ -14,10 +14,12 @@ class PostController extends Controller
     }
 
     //
-    function index(Posts $postss){
-        $posts=$postss->all();
+    function index(){
+       // return $tag['posts'];
+    //        return session('message');
+       // $posts=$postss->all();
       //  $posts=(new \App\Repositories\Posts)->all();
-       // $posts=Post::latest()->filter(request(['month','year']))->get();
+        $posts=Post::latest()->filter(request(['month','year']))->get();
         return view("posts.index",compact('posts'));
     }
     function create(){
@@ -46,6 +48,7 @@ class PostController extends Controller
         auth()->user()->publish(
             new Post(request(['title','body']))
         );
+        session()->flash('message','You post has been published');
         return redirect('/');
     }
     public function show(Post $post){

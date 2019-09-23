@@ -1,17 +1,17 @@
 @component('mail::message')
-# Introduction
+# Happy with other Post?
 
-The body of your message.
+Some motivation for you....
 - Try to always wash your hand
 - Look at the mirror who you are
 - Like your self
 
-@component('mail::button', ['url' => ''])
-Button Text
+@component('mail::button', ['url' => 'localhost:8000/'])
+See other user Post
 @endcomponent
 
 @component('mail::panel', ['url' => ''])
-   Lorem ipsum dolar sit amet.
+    Ut rerum officiis nihil aut natus laborum. Et necessitatibus sint non blanditiis tempora. Quidem sapi
 @endcomponent
 
 Thanks,<br>

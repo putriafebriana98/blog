@@ -38,7 +38,10 @@ class Post extends Model
             ->orderByRaw('min(created_at) desc')
             ->get()
             ->toArray();
-}
+    }
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
 }
 //comment on the tinker
 /*$posts = App\Post::find(6);

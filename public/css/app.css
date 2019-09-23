@@ -27,6 +27,15 @@ h6,
   color: #537e24;
 }
 
+#flash-message {
+  position: absolute;
+  z-index: 10;
+  background: #196c74;
+  background-color: #d4e735;
+  top: 200px;
+  left: 20px;
+}
+
 /*
  * Override Bootstrap's default container.
  */
